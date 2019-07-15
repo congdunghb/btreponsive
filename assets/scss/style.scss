@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+} */
+
+// header
+header {
+  background-color: #ccc;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  line-height: 70px;
+  z-index: 10;
+  border-bottom: 5px solid #fff;
+}
+.header__title {
+  margin: 0;
+  text-align: center;
+  background-color: #ccc;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* content  */
+.content {
+  &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+.content__nav {
+  background-color: #ccc;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 200px;
+  position: sticky;
+  top: 75px;
+  z-index: 1;
+  left: 0;
+  float: left;
+}
+
+.content__right {
+  width: 200px;
+  background-color: #ddd;
+  position: sticky;
+  top: 75px;
+  float: left;
+}
+.content__center {
+  width: calc(100% - 410px);
+  margin: 0 5px;
+  padding: 10px;
+  background-color: #ddd;
+  float: left;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 179px);
+  grid-gap: 2px;
+}
+.content__item {
+  text-align: center;
+  background-color: #ddd;
+  padding: 10px 0;
+
+  + .content__item {
+    margin-top: 10px;
+  }
+}
+
+.content__right-title {
+  margin: 0;
+  text-align: center;
+}
+.content__object {
+  // height: auto;
+  // width: calc(( 100% / 5) - 20px);
+  text-align: center;
+  // + .content__object {
+  //   margin-left: 5px;
+  // }
+  // &:nth-of-type(6n) {
+  //   margin-left: 0;
+  // }
+}
+.content__object-link {
+  display: inline-block;
+  width: 100%;
+}
+.content__object-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content__object-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+  padding: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+  transition: 0.2s;
+  color: #000;
+  display: inline-block;
+  // word-break: break-word;
+  white-space: nowrap;
+}
+.content__object-title:hover {
+  color: #7291b9;
+}
+
+/* footer */
+footer {
+  background-color: #ddd;
+  padding: 30px 0;
+  margin-top: 5px;
+}
+.footer__title {
+  text-align: center;
+  margin: 0;
+}
+
+@media screen and (max-width: 620px) {
+  .content__nav,
+  .content__center,
+  .content__right {
+    float: none;
+    width: 100%;
+    grid-template-columns: auto;
+    // margin: 0;
+    // padding: 0;
+    border-bottom: 5px solid #fff;
+  }
+}
