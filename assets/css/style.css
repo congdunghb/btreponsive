@@ -108,7 +108,8 @@ header {
   transition: 0.2s;
   color: #000;
   display: inline-block;
-  white-space: nowrap;
+  height: 50px;
+  word-break: break-all;
 }
 
 .content__object-title:hover {
@@ -129,12 +130,25 @@ footer {
 
 @media screen and (max-width: 620px) {
   .content__nav,
-.content__center,
-.content__right {
+  .content__right {
     float: none;
     width: 100%;
     grid-template-columns: auto;
     border-bottom: 5px solid #fff;
+  }
+
+  .content__center{
+    float: none;
+    width: 100%;
+    grid-template-columns:repeat(auto-fill,170px);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .content__center {
+    width: 100%;
+    grid-template-columns:repeat(auto-fill,210px);
+    grid-gap: 10px;
   }
 }
 
